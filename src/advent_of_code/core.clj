@@ -1,5 +1,6 @@
 (ns advent-of-code.core
-  (:gen-class))
+  (:gen-class)
+  (:require [clojure.java.io :as io]))
 
 
 (defn- call-mapping-function
@@ -22,9 +23,15 @@
         "Please provide day and part number. E.g. advent-of-code day5 part2"
         ))
 
-(def implemented {})
+(defn load-input
+    [resource]
+    (slurp (io/file (io/resource resource))))
+
+(def implemented {"day2" {"part1" (fn [] "foo")}})
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println (call-day-and-part args)))
+  (println (apply
+            call-day-and-part
+            (concat [implemented] args))))

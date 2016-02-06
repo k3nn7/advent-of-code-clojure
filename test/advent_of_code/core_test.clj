@@ -30,3 +30,8 @@
             (is (string/includes?
                     (call-day-and-part mapping "day1" "part2")
                     "part2 for day1 is not implemented")))))
+
+(deftest load-input-test
+    (testing "Load input file"
+        (testing "that exists"
+            (is (= "input data\n" (load-input "example"))))))
