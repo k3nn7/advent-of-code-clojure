@@ -1,6 +1,7 @@
 (ns advent-of-code.core
   (:gen-class)
-  (:require [clojure.java.io :as io]))
+  (:require [clojure.java.io :as io])
+  (:require [advent-of-code.day1.part1]))
 
 
 (defn- call-mapping-function
@@ -27,7 +28,10 @@
     [resource]
     (slurp (io/file (io/resource resource))))
 
-(def implemented {"day2" {"part1" (fn [] "foo")}})
+(def implemented {
+    "day1" {
+        "part1" (fn [] (advent-of-code.day1.part1/move-santa (load-input "day1")))
+        }})
 
 (defn -main
   "I don't do a whole lot ... yet."
