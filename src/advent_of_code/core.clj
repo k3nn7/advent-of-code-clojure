@@ -1,7 +1,8 @@
 (ns advent-of-code.core
   (:gen-class)
   (:require [clojure.java.io :as io])
-  (:require [advent-of-code.day1.part1]))
+  (:require [advent-of-code.day1.part1 :as d1p1])
+  (:require [advent-of-code.day1.part2 :as d1p2]))
 
 
 (defn- call-mapping-function
@@ -30,7 +31,8 @@
 
 (def implemented {
     "day1" {
-        "part1" (fn [] (advent-of-code.day1.part1/move-santa (load-input "day1")))
+        "part1" (fn [] (d1p1/move-santa (load-input "day1")))
+        "part2" (fn [] (d1p2/when-enters-basement (load-input "day1")))
         }})
 
 (defn -main
