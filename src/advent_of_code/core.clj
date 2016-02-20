@@ -2,7 +2,9 @@
   (:gen-class)
   (:require [clojure.java.io :as io])
   (:require [advent-of-code.day1.part1 :as d1p1])
-  (:require [advent-of-code.day1.part2 :as d1p2]))
+  (:require [advent-of-code.day1.part2 :as d1p2])
+  (:require [advent-of-code.day2.part1 :as d2p1])
+  (:require [advent-of-code.day2.part2 :as d2p2]))
 
 
 (defn- call-mapping-function
@@ -33,7 +35,11 @@
     "day1" {
         "part1" (fn [] (d1p1/move-santa (load-input "day1")))
         "part2" (fn [] (d1p2/when-enters-basement (load-input "day1")))
-        }})
+        },
+    "day2" {
+        "part1" (fn [] (d2p1/calc-total-amount (load-input "day2")))
+        "part2" (fn [] (d2p2/calc-total-amount (load-input "day2")))
+      }})
 
 (defn -main
   "I don't do a whole lot ... yet."
