@@ -6,7 +6,8 @@
   (:require [advent-of-code.day2.part1 :as d2p1])
   (:require [advent-of-code.day2.part2 :as d2p2])
   (:require [advent-of-code.day3.part1 :as d3p1])
-  (:require [advent-of-code.day3.part2 :as d3p2]))
+  (:require [advent-of-code.day3.part2 :as d3p2])
+  (:require [advent-of-code.day4.part1 :as d4p1]))
 
 
 (defn- call-mapping-function
@@ -45,7 +46,12 @@
     "day3" {
         "part1" (fn [] (d3p1/count-visited-houses (d3p1/visit-given-houses (load-input "day3"))))
         "part2" (fn [] (d3p2/count-visited-houses (d3p2/visit-given-houses (load-input "day3"))))
-      }})
+      }
+    "day4" {
+        "part1" (fn [] (d4p1/find-hash "iwrupvqb" "00000"))
+        "part2" (fn [] (d4p1/find-hash "iwrupvqb" "000000"))
+      }
+    })
 
 (defn -main
   "I don't do a whole lot ... yet."
