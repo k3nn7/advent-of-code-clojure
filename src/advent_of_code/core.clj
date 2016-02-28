@@ -32,24 +32,32 @@
 
 (defn load-input
     [resource]
-    (slurp (io/file (io/resource resource))))
+    ((comp slurp io/file io/resource) resource))
 
 (def implemented {
     "day1" {
-        "part1" (fn [] (d1p1/move-santa (load-input "day1")))
-        "part2" (fn [] (d1p2/when-enters-basement (load-input "day1")))
+        "part1" #((comp d1p1/move-santa
+                        load-input) "day1")
+        "part2" #((comp d1p2/when-enters-basement
+                        load-input) "day1")
         },
     "day2" {
-        "part1" (fn [] (d2p1/calc-total-amount (load-input "day2")))
-        "part2" (fn [] (d2p2/calc-total-amount (load-input "day2")))
+        "part1" #((comp d2p1/calc-total-amount
+                        load-input) "day2")
+        "part2" #((comp d2p2/calc-total-amount
+                        load-input) "day2")
       }
     "day3" {
-        "part1" (fn [] (d3p1/count-visited-houses (d3p1/visit-given-houses (load-input "day3"))))
-        "part2" (fn [] (d3p2/count-visited-houses (d3p2/visit-given-houses (load-input "day3"))))
+        "part1" #((comp d3p1/count-visited-houses
+                        d3p1/visit-given-houses
+                        load-input) "day3")
+        "part2" #((comp d3p2/count-visited-houses
+                        d3p2/visit-given-houses
+                        load-input) "day3")
       }
     "day4" {
-        "part1" (fn [] (d4p1/find-hash "iwrupvqb" "00000"))
-        "part2" (fn [] (d4p1/find-hash "iwrupvqb" "000000"))
+        "part1" #(d4p1/find-hash "iwrupvqb" "00000")
+        "part2" #(d4p1/find-hash "iwrupvqb" "000000")
       }
     })
 
