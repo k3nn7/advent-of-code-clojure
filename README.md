@@ -1,36 +1,25 @@
-# advent-of-code
+# Advent of Code
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+This repository contains my solutions for [Advent of Code](http://adventofcode.com/) programming puzzles written in Clojure language.
 
 ## Usage
 
-FIXME: explanation
+To run puzzle for given day type in console:
 
-    $ java -jar advent-of-code-0.1.0-standalone.jar [args]
+```bash
+$ lein run <day> <part>
+```
 
-## Options
+e.g.
 
-FIXME: listing of options this app accepts.
+```bash
+$ lein run day2 part1
+```
 
-## Examples
+My input data is already resources directory
 
-...
+## Testing
 
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+```bash
+$ lein test
+```
