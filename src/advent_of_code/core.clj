@@ -8,7 +8,9 @@
   (:require [advent-of-code.day3.part1 :as d3p1])
   (:require [advent-of-code.day3.part2 :as d3p2])
   (:require [advent-of-code.day4.part1 :as d4p1])
-  (:require [advent-of-code.day5.part1 :as d5p1]))
+  (:require [advent-of-code.day5.part1 :as d5p1])
+  (:require [advent-of-code.day5.part2 :as d5p2])
+  )
 
 
 (defn- call-mapping-function
@@ -63,8 +65,9 @@
     "day5" {
       "part1" #((comp d5p1/count-nice-strings
                       load-input) "day5")
-      ; "part2" #(d4p1/find-hash "iwrupvqb" "000000")
-    }
+      "part2" #((comp d5p2/count-nice-strings
+                      load-input) "day5")
+      }
     })
 
 (defn -main
